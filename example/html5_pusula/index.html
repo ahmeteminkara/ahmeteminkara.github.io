@@ -32,6 +32,9 @@
 <body>
 
 
+    <img src="pusula.png" id="myimage" alt="pusula" />
+
+
     <div class="garden">
         <div class="ball"></div>
     </div>
@@ -44,7 +47,7 @@
 <script>
 
     window.onload = function () {
-
+        var img = document.getElementById('myimage');
 
         var ball = document.querySelector('.ball');
         var garden = document.querySelector('.garden');
@@ -57,6 +60,9 @@
             var x = event.beta;  // In degree in the range [-180,180]
             var y = event.gamma; // In degree in the range [-90,90]
             var z = event.alpha; // In degree in the range [-90,90]
+
+
+            img.style.transform = 'rotate(' + z + 'deg)';
 
             output.innerHTML = "beta : " + x + "\n";
             output.innerHTML += "gamma: " + y + "\n";
@@ -81,9 +87,8 @@
 
         if (window.DeviceOrientationEvent) {
             window.addEventListener('deviceorientation', handleOrientation, false);
-            document.getElementById("doeSupported").innerText = "Supported";
         } else {
-            document.getElementById("doeSupported").innerText = "Not Supported!!!";
+            alert("Not Supported DeviceOrientationEvent !!");
         }
 
 
