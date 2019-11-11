@@ -31,6 +31,10 @@
             <td>interval (ms)</td>
             <td id="moInterval"></td>
         </tr>
+        <tr>
+            <td>doeSupported</td>
+            <td id="doeSupported"></td>
+        </tr>
     </table>
 
     <p><small>Demo based on <a href="https://www.html5rocks.com/en/tutorials/device/orientation/" target="_blank">HTML5
@@ -52,6 +56,13 @@
     // gyroscope.start();
 
     window.onload = function () {
+
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+            document.getElementById("doeSupported").innerText = "Supported!";
+        }
+
+
         if ('LinearAccelerationSensor' in window && 'Gyroscope' in window) {
             document.getElementById('moApi').innerHTML = 'Generic Sensor API';
 
