@@ -16,7 +16,7 @@
             <td id="moApi"></td>
         </tr>
         <tr>
-            <td>linear acceleration (excl. gravity)</td>
+            <td>linear acc</td>
             <td id="moAccel"></td>
         </tr>
         <tr>
@@ -58,8 +58,10 @@
     window.onload = function () {
 
         if (window.DeviceOrientationEvent) {
-            window.addEventListener('deviceorientation', deviceOrientationHandler, false);
-            document.getElementById("doeSupported").innerText = "Supported!";
+            // window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+            document.getElementById("doeSupported").innerText = "Destekliyor";
+        }else{
+            document.getElementById("doeSupported").innerText = "Desteklemiyor!!!";
         }
 
 
