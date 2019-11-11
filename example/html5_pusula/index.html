@@ -8,22 +8,10 @@
     <title>Document</title>
 
     <style>
-        .garden {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            border: 5px solid #CCC;
-            border-radius: 10px;
-        }
-
-        .ball {
-            position: absolute;
-            top: 90px;
-            left: 90px;
-            width: 20px;
-            height: 20px;
-            background: green;
-            border-radius: 100%;
+        #pusula {
+            width: 400px;
+            margin-left: calc((100vw - 400px) / 2);
+            margin-top: calc((100vh - 400px) / 2);
         }
     </style>
 
@@ -32,14 +20,14 @@
 <body>
 
 
-    <img src="pusula.jpg" id="myimage" alt="pusula" style="width: 300px;" />
+    <img src="pusula.jpg" id="pusula" alt="pusula"/>
 
-
+    <!-- 
     <div class="garden">
         <div class="ball"></div>
     </div>
 
-    <pre class="output"></pre>
+    <pre class="output"></pre> -->
 
 
 </body>
@@ -47,14 +35,14 @@
 <script>
 
     window.onload = function () {
-        var img = document.getElementById('myimage');
+        var img = document.getElementById('pusula');
 
-        var ball = document.querySelector('.ball');
-        var garden = document.querySelector('.garden');
-        var output = document.querySelector('.output');
+        // var ball = document.querySelector('.ball');
+        // var garden = document.querySelector('.garden');
+        // var output = document.querySelector('.output');
 
-        var maxX = garden.clientWidth - ball.clientWidth;
-        var maxY = garden.clientHeight - ball.clientHeight;
+        // var maxX = garden.clientWidth - ball.clientWidth;
+        // var maxY = garden.clientHeight - ball.clientHeight;
 
         function handleOrientation(event) {
             var x = event.beta;  // In degree in the range [-180,180]
@@ -64,24 +52,24 @@
 
             img.style.transform = 'rotate(' + z + 'deg)';
 
-            output.innerHTML = "beta : " + x + "\n";
-            output.innerHTML += "gamma: " + y + "\n";
-            output.innerHTML += "alpha: " + z + "\n";
+            // output.innerHTML = "beta : " + x + "\n";
+            // output.innerHTML += "gamma: " + y + "\n";
+            // output.innerHTML += "alpha: " + z + "\n";
 
-            // Because we don't want to have the device upside down
-            // We constrain the x value to the range [-90,90]
-            if (x > 90) { x = 90 };
-            if (x < -90) { x = -90 };
+            // // Because we don't want to have the device upside down
+            // // We constrain the x value to the range [-90,90]
+            // if (x > 90) { x = 90 };
+            // if (x < -90) { x = -90 };
 
-            // To make computation easier we shift the range of 
-            // x and y to [0,180]
-            x += 90;
-            y += 90;
+            // // To make computation easier we shift the range of 
+            // // x and y to [0,180]
+            // x += 90;
+            // y += 90;
 
-            // 10 is half the size of the ball
-            // It center the positioning point to the center of the ball
-            ball.style.top = (maxY * y / 180 - 10) + "px";
-            ball.style.left = (maxX * x / 180 - 10) + "px";
+            // // 10 is half the size of the ball
+            // // It center the positioning point to the center of the ball
+            // ball.style.top = (maxY * y / 180 - 10) + "px";
+            // ball.style.left = (maxX * x / 180 - 10) + "px";
         }
 
 
