@@ -80,7 +80,7 @@
 
 
         if (window.DeviceOrientationEvent) {
-            window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+            window.addEventListener('deviceorientation', handleOrientation, false);
             document.getElementById("doeSupported").innerText = "Supported";
         } else {
             document.getElementById("doeSupported").innerText = "Not Supported!!!";
