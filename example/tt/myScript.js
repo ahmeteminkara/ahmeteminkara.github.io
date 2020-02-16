@@ -20,55 +20,32 @@ const staticSecim = [
 ]
 
 const radioGenerator = () => {
-    $.ajax({
-        url: "services/run.php?m=getList",
-        type: "post",
-        success: function (res) {
-
-            if (res.success) {
-
-                let html = "";
+    let html = "";
 
 
-                html += "   <thead>";
-                html += "   <tr>";
-                html += '       <th colspan="3">Takımlar</th>';
-                //html += '       <th>Banko Mu?</th>';
-                html += '       <th>Seçimler</th>';
-                html += "   </tr>";
-                html += "   </thead>";
+    html += "   <thead>";
+    html += "   <tr>";
+    //html += '       <th>Banko Mu?</th>';
+    html += '       <th>Seçimler</th>';
+    html += "   </tr>";
+    html += "   </thead>";
 
-                for (let index = 0; index < 15; index++) {
-                    html += `  <tr>`;
-                    html += `      <td>` + index + `</td>`;
-                    html += `      <td>` + res.data[index] + `</td>`;
-                    html += `      <td><button type="button" class="btn btn-danger btn-sm" onclick=clearOption(` + index + `)>X</button></td>`;
-                    //  html += `      <td><input class="form-control bankoMu ` + index + `" type="checkbox" ></td>`;
-                    html += `      <td><input class="form-control secim ` + index + `" value="` + staticSecim[index] + `" type="text"></td>`;
-                    //html += `      <td><input class="form-control secim ` + index + `" value="" type="text"></td>`;
-                    html += `  </tr>`;
-                }
+    for (let index = 0; index < 15; index++) {
+        html += `  <tr>`;
+        html += `      <td>` + index + `</td>`;
+        html += `      <td><button type="button" class="btn btn-danger btn-sm" onclick=clearOption(` + index + `)>X</button></td>`;
+        //  html += `      <td><input class="form-control bankoMu ` + index + `" type="checkbox" ></td>`;
+        html += `      <td><input class="form-control secim ` + index + `" value="` + staticSecim[index] + `" type="text"></td>`;
+        //html += `      <td><input class="form-control secim ` + index + `" value="" type="text"></td>`;
+        html += `  </tr>`;
+    }
 
-                //http://istatistik.nesine.com/?st=5
+    //http://istatistik.nesine.com/?st=5
 
-                //istatistik linkini yeni sekmede aç....
+    //istatistik linkini yeni sekmede aç....
 
 
-                $('#radioTable').html(html);
-
-
-            }
-
-
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        }
-
-
-    });
-
-
+    $('#radioTable').html(html);
 
 
 }
@@ -208,7 +185,7 @@ const ekranaBas = (sonuc = []) => {
 
             tbody += `<td>${element[satir]}</td>`
 
-            komutOlustur()
+            //komutOlustur()
 
             //
 
