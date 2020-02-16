@@ -185,9 +185,6 @@ const ekranaBas = (sonuc = []) => {
 
             tbody += `<td>${element[satir]}</td>`
 
-            //komutOlustur()
-
-            //
 
 
         }
