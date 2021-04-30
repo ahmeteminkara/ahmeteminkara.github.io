@@ -3,5 +3,10 @@
         "id": "d510913cb35103dd",
         "name": "Galaxy S7",
         "admin": true
+    },
+    {
+        "id": "91eb8e6daffb2563",
+        "name": "Emulator",
+        "admin": false
     }
 ]
