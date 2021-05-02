@@ -23,5 +23,10 @@
         "id": "91eb8e6daffb2563",
         "name": "Emulator",
         "admin": false
+    } ,
+    {
+        "id": "f9ce31e76efdb10f",
+        "name": "Huawei",
+        "admin": false
     }
 ]
