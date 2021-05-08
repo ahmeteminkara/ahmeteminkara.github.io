@@ -20,13 +20,13 @@
         "admin": true
     },
     {
-        "id": "91eb8e6daffb2563",
-        "name": "Emulator",
-        "admin": false
-    } ,
-    {
         "id": "f9ce31e76efdb10f",
         "name": "Huawei",
+        "admin": false
+    },
+    {
+        "id": "54f043e82308e7fa",
+        "name": "Hakan",
         "admin": false
     }
 ]
